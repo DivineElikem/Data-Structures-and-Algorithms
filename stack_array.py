@@ -4,29 +4,26 @@ class stack():
 
     def push(self, element):
         self.stack.append(element)
+        return
 
     def pop(self):
-        if len(self.stack) == 0:
+        if self.is_empty():
             return "No element in stack"
-        else:
-            return self.stack.pop()
+        return self.stack.pop()
         
     def peek(self):
-        if len(self.stack) == 0:
+        if self.is_empty():
             return "No element in stack"
-        else:
-            return self.stack[-1]
+        return self.stack[-1]
 
     def is_empty(self):
-        if len(self.stack) == 0:
-            return True
-        return False
+        return len(self.stack) == 0
     
     def size(self):
         return len(self.stack)
     
 
-#Use Case
+#Usecase
 stack1 = stack()
 print("Pop: ", stack1.pop())
 stack1.push(2)
@@ -40,10 +37,9 @@ print("Stack: ", stack1.stack)
 print("Pop: ", stack1.pop())
 print("After poping: ", stack1.stack)
 
-print("Peek: ", stack1.peek())
-print("After finding peek: ", stack1.stack)
+print("current peek: ", stack1.peek())
 
-print("Stack empty: ", stack1.is_empty())
+print("Current stack is empty: ", stack1.is_empty())
 
-print("Stack size: ", stack1.size())
+print("Current stack size: ", stack1.size())
 
